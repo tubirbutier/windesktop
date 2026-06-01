@@ -2,7 +2,7 @@
 Imports System.IO
 Imports System.Diagnostics
 
-Public Class Form1
+Public Class Main
 
     Private Const HWND_BOTTOM As Integer = 1
     Private Const SWP_NOSIZE As Integer = &H1
@@ -105,17 +105,16 @@ Public Class Form1
         Dim centerY As Integer = currentScreen.Bounds.Y + (currentScreen.Bounds.Height - Me.Height) \ 2
 
         SetWindowPos(Me.Handle, New IntPtr(HWND_BOTTOM), centerX, centerY, Me.Width, Me.Height, SWP_SHOWWINDOW)
-
-        Button1.Location = New Point(0, 0)
-        Button2.Location = New Point(Me.ClientRectangle.Width - Button2.Width, 0)
-        Button4.Location = New Point(0, Me.ClientRectangle.Height - Button4.Height)
-        Button3.Location = New Point(Me.ClientRectangle.Width - Button3.Width, Me.ClientRectangle.Height - Button3.Height)
     End Sub
 
     Private Sub LoadTranscodedWallpaper()
         Try
             Dim appDataPath As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
             Dim wallpaperPath As String = Path.Combine(appDataPath, "Microsoft\Windows\Themes\TranscodedWallpaper")
+
+            If Not File.Exists(wallpaperPath) Then
+                wallpaperPath = Path.Combine(appDataPath, "Microsoft\Windows\Themes\Wallpaper.jpg")
+            End If
 
             If File.Exists(wallpaperPath) Then
                 Using fs As New FileStream(wallpaperPath, FileMode.Open, FileAccess.Read)
@@ -126,6 +125,7 @@ Public Class Form1
                 End Using
             End If
         Catch ex As Exception
+            MessageBox.Show("GAHHH I CANT LOAD THE DAMN WALLPAPER HERS WHY: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
     End Sub
 
@@ -167,27 +167,13 @@ Public Class Form1
         MyBase.WndProc(m)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-    End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-    End Sub
-
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-    End Sub
-
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs)
         Try
-            Dim startInfo As New ProcessStartInfo()
-            startInfo.FileName = "conhost.exe"
-            startInfo.Arguments = "powershell.exe"
-            Process.Start(startInfo)
-
+            Process.Start("C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe", "-wd C:\ -Command 'echo Launched from Windesktop' -NoExit")
         Catch ex As Exception
-            MessageBox.Show("Failed to launch PowerShell: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("I dont think it uhh wokring so uhh please stop usey my appy because it is trashey I made a fucky wucky: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
 End Class
