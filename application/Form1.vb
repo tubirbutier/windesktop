@@ -168,12 +168,4 @@ Public Class Main
     End Sub
 
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs)
-        Try
-            Process.Start("C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe", "-wd C:\ -Command 'echo Launched from Windesktop' -NoExit")
-        Catch ex As Exception
-            MessageBox.Show("I dont think it uhh wokring so uhh please stop usey my appy because it is trashey I made a fucky wucky: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
-
 End Class
