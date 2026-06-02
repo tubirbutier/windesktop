@@ -6,3 +6,4 @@ Please don't use this
 - [ ] make the taskbar better and actually useful
 - [ ] add configuration
 - [ ] make it less shitty
+- [ ] make an kde application dashboard-like thing
