@@ -110,10 +110,15 @@ Public Class Main
     Private Sub LoadTranscodedWallpaper()
         Try
             Dim appDataPath As String = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)
-            Dim wallpaperPath As String = Path.Combine(appDataPath, "Microsoft\Windows\Themes\TranscodedWallpaper")
+            Dim themesPath As String = Path.Combine(appDataPath, "Microsoft\Windows\Themes")
+            Dim wallpaperPath As String = Path.Combine(themesPath, "TranscodedWallpaper")
 
             If Not File.Exists(wallpaperPath) Then
-                wallpaperPath = Path.Combine(appDataPath, "Microsoft\Windows\Themes\Wallpaper.jpg")
+                wallpaperPath = Path.Combine(themesPath, "TranscodedWallpaper.jpg")
+            End If
+
+            If Not File.Exists(wallpaperPath) Then
+                wallpaperPath = Path.Combine(themesPath, "Wallpaper.jpg")
             End If
 
             If File.Exists(wallpaperPath) Then
@@ -166,6 +171,4 @@ Public Class Main
 
         MyBase.WndProc(m)
     End Sub
-
-
 End Class
