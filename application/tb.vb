@@ -94,8 +94,8 @@ Public Class tb
 
         SetWindowPos(Me.Handle, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE Or SWP_NOACTIVATE)
     End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
         System.Windows.Forms.Application.Exit()
+
     End Sub
 End Class
