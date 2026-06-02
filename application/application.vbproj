@@ -73,11 +73,23 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="autolaunch.Designer.vb">
+      <DependentUpon>autolaunch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="autolaunch.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphicalDBGLaunch.Designer.vb">
+      <DependentUpon>GraphicalDBGLaunch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicalDBGLaunch.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -96,16 +108,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="tb.Designer.vb">
+      <DependentUpon>tb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="tb.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="autolaunch.resx">
+      <DependentUpon>autolaunch.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphicalDBGLaunch.resx">
+      <DependentUpon>GraphicalDBGLaunch.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tb.resx">
+      <DependentUpon>tb.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
