@@ -2,6 +2,7 @@
 Please don't use this
 
 # TODO
-- [ ] add like a taskbar but not
+- [X] add like a taskbar but not
+- [ ] make the taskbar better and actually useful
 - [ ] add configuration
 - [ ] make it less shitty
