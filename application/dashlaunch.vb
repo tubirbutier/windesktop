@@ -61,6 +61,14 @@ Public Class dashlaunch
     Private DynamicImages As New ImageList()
 
     Private Sub dashlaunch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Me.StartPosition = FormStartPosition.Manual
+
+        Dim workingArea As Rectangle = Screen.PrimaryScreen.WorkingArea
+        Dim x As Integer = workingArea.Left
+        Dim y As Integer = workingArea.Bottom - Me.Height
+        Me.Location = New Point(x, y)
+
         Me.BackColor = Color.FromArgb(30, 30, 30)
 
         Dim policy As New AccentPolicy()
@@ -121,9 +129,7 @@ Public Class dashlaunch
                 End If
 
                 fileItem.Tag = fileInfo.FullName
-
                 fileItem.ForeColor = Color.White
-
                 ListView1.Items.Add(fileItem)
             Next
 
@@ -133,9 +139,7 @@ Public Class dashlaunch
                 Dim dirItem As New ListViewItem(dirInfo.Name)
 
                 dirItem.Tag = dirInfo.FullName
-
                 dirItem.ForeColor = Color.White
-
                 ListView2.Items.Add(dirItem)
             Next
 
@@ -169,7 +173,6 @@ Public Class dashlaunch
     Private Sub ListView2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView2.SelectedIndexChanged
     End Sub
 
-    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
-
+    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs)
     End Sub
 End Class
