@@ -7,9 +7,6 @@ Replaces explorer in the HKCU or HKLM\Software\Microsoft\Windows\CurrentVersion\
 The .NET Framework 4.7.2 and JetBrains Mono NF
 
 # TODO
-- [X] add like a taskbar but not
-- [X] make an application launcher like the windows start menu and kde application launcher (not fullscreen application dashboard inspired any longer)
-- [X] make the taskbar better and actually useful
 - [ ] add configuration
 - [ ] make it less crappy
 - [ ] make it more usable
