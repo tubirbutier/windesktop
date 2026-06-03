@@ -3,6 +3,9 @@
 Stupid explorer Shell replacement
 Replaces explorer in the HKCU or HKLM\Software\Microsoft\Windows\CurrentVersion\Shell REG_SZ
 
+# Dependencies
+The .NET Framework 4.7.2 and JetBrains Mono NF
+
 # TODO
 - [X] add like a taskbar but not
 - [X] make an application launcher like the windows start menu and kde application launcher (not fullscreen application dashboard inspired any longer)
