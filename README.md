@@ -2,6 +2,7 @@
 
 Stupid explorer Shell replacement
 Replaces explorer in the HKCU or HKLM\Software\Microsoft\Windows\CurrentVersion\Shell REG_SZ
+**Warning**: Not tested on Windows NT 6.1 *yet* 
 
 # Dependencies
 The .NET Framework 4.7.2 and JetBrains Mono NF
