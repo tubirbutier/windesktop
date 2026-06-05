@@ -1,7 +1,7 @@
 # WinDesktop
 
 Stupid explorer Shell replacement
-Replaces explorer in the HKCU or HKLM\Software\Microsoft\Windows\CurrentVersion\Shell REG_SZ
+Replaces explorer in the HKLM\Software\Microsoft\Windows\CurrentVersion\Winlogon\Shell REG_SZ
 
 **Warning**: Not tested on Windows NT 6.1 *yet* 
 
